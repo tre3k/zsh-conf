@@ -9,6 +9,10 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias su='su -s /usr/bin/zsh'
 
+if [[ -f "/usr/bin/lsd" ]]; then
+    alias ls='lsd'
+fi
+
 # auto competation (for args commands)
 autoload -Uz compinit
 compinit
