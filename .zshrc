@@ -71,17 +71,7 @@ function precmd() {
 
 TIMEFMT=$'%J: %E real, %U user, %S sys, %P cpu'
 
-_color_bg=68
-_color_fg=236
-_color_git_bg=114
-_color_rfg=243
-
-if [[ "$UID" == 0 ]]; then
-    _color_bg=208
-    _color_rfg=124
-fi
-
-# COPY like emacs need
+# COPY like emacs
 if [[ -f "/usr/bin/xsel" ]]; then
     x-copy-region-as-kill () {
 	zle copy-region-as-kill
@@ -104,6 +94,17 @@ if [[ -f "/usr/bin/xsel" ]]; then
     bindkey -e '\ew' x-copy-region-as-kill
     bindkey -e '^W' x-kill-region
     bindkey -e '^Y' x-yank
+fi
+
+
+_color_bg=68
+_color_fg=236
+_color_git_bg=114
+_color_rfg=243
+
+if [[ "$UID" == 0 ]]; then
+    _color_bg=208
+    _color_rfg=243
 fi
 
 zstyle ':vcs_info:git:*' formats "%F{$color_fg}%K{$_color_git_bg} %b%K{$_color_bg}%F{$_color_git_bg}%f%k"
