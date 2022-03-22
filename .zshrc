@@ -104,12 +104,14 @@ _color_fg=236
 _color_git_bg=114
 _color_rfg=243
 
+_r_postfix=""
 if [[ "$UID" == 0 ]]; then
     _color_bg=208
     _color_rfg=243
+    _r_postfix="!"
 fi
 
 zstyle ':vcs_info:git:*' formats "%F{$color_fg}%K{$_color_git_bg} %b%K{$_color_bg}%F{$_color_git_bg}%f%k"
 setopt prompt_subst
 PROMPT='${vcs_info_msg_0_}%F{$_color_fg}%K{$_color_bg} %~ %k%f%F{$_color_bg}%f '
-RPROMPT='%F{$_color_rfg} %n@%m%f'
+RPROMPT='%F{$_color_rfg} %n${_r_postfix}@%m%f'
