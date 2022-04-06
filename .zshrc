@@ -1,7 +1,7 @@
 export PATH=$PATH:/home/kirill/.local/bin
 export BROWSER=/usr/bin/firefox
 export EDITOR='vim'
-#export COLORTERM=truecolor       # enable truecolor
+export COLORTERM=truecolor       # enable truecolor
 
 alias emacs='emacsclient -c'
 alias ls='ls --color=auto'
