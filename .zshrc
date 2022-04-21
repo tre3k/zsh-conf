@@ -1,3 +1,5 @@
+source ~/.profile
+
 export PATH=$PATH:/home/kirill/.local/bin
 export BROWSER=/usr/bin/firefox
 export EDITOR='vim'
