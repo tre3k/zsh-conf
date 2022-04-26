@@ -65,6 +65,8 @@ function preexec() {
 }
 
 function precmd() {
+    [[ $history[$[ HISTCMD -1 ]] == (pacman -S|pacman -U|yay -S)* ]] && rehash
+
     # case $? in
     # 	0) _error="";;
     # 	130) _error="terminated";;
