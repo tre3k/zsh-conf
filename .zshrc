@@ -14,6 +14,9 @@ if [[ -f "/usr/bin/lsd" ]]; then
     alias ls='lsd'
 fi
 
+# emacs shortcuts
+bindkey -e
+
 # auto competation (for args commands)
 autoload -Uz compinit
 compinit
@@ -27,7 +30,7 @@ setopt correctall
 # enable edit-command-line
 autoload -Uz edit-command-line
 zle -N edit-command-line
-bindkey "^x^e" edit-command-line
+bindkey -e "^x^e" edit-command-line
 
 # enable color
 autoload -Uz colors && colors
