@@ -116,13 +116,29 @@ fi
 
 setopt prompt_subst
 
-case "$TERM" in
-    "linux")
-	PROMPT='%n@%m %~ %# '
-	;;
-    *)
-	zstyle ':vcs_info:git:*' formats "%F{$_color_fg}%K{$_color_git_bg} %b%K{$_color_bg}%F{$_color_git_bg}%f%k"
+function setColorPrompt () {
+    	zstyle ':vcs_info:*' check-for-changes true
+	zstyle ':vcs_info:*' unstagedstr '%B%F{124}!%f%b'
+	zstyle ':vcs_info:*' stagedstr '%B%F{22}+%f%b'
+	zstyle ':vcs_info:*' formats "%F{$_color_fg}%K{$_color_git_bg} %s%b%u%c%K{$_color_bg}%F{$_color_git_bg}%f%k"
 	PROMPT='${vcs_info_msg_0_}%F{$_color_fg}%K{$_color_bg} %~ %k%f%F{$_color_bg}%f '
 	RPROMPT='%F{$_color_rfg} %n${_r_postfix}@%m%f'
+}
+
+case "$TERM" in
+    "rxvt-256color")
+        setColorPrompt
+	;;
+
+    "xterm-256color")
+        setColorPrompt
+	;;
+
+    *)
+	zstyle ':vcs_info:*' check-for-changes true
+	zstyle ':vcs_info:*' unstagedstr '!'
+	zstyle ':vcs_info:*' stagedstr '+'
+	zstyle ':vcs_info:*' formats "[%s:%b%u%c] "
+	PROMPT='${vcs_info_msg_0_}%n@%m %~ %# '
 	;;
 esac
