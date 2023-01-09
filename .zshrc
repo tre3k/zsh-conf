@@ -117,7 +117,7 @@ fi
 setopt prompt_subst
 
 function setColorPrompt () {
-    	zstyle ':vcs_info:*' check-for-changes true
+	zstyle ':vcs_info:*' check-for-changes true
 	zstyle ':vcs_info:*' unstagedstr '%B%F{124}!%f%b'
 	zstyle ':vcs_info:*' stagedstr '%B%F{22}+%f%b'
 	zstyle ':vcs_info:*' formats "%F{$_color_fg}%K{$_color_git_bg} %s%b%u%c%K{$_color_bg}%F{$_color_git_bg}%f%k"
@@ -126,12 +126,8 @@ function setColorPrompt () {
 }
 
 case "$TERM" in
-    "rxvt-256color")
-        setColorPrompt
-	;;
-
-    "xterm-256color")
-        setColorPrompt
+    *256color*)
+	setColorPrompt
 	;;
 
     *)
