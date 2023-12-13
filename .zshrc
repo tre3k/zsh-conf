@@ -130,6 +130,10 @@ case "$TERM" in
 	setColorPrompt
 	;;
 
+    eterm-color)
+	setColorPrompt
+	;;
+
     *)
 	zstyle ':vcs_info:*' check-for-changes true
 	zstyle ':vcs_info:*' unstagedstr '!'
