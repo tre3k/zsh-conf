@@ -9,4 +9,3 @@ set expandtab
 
 autocmd BufWritePre * :%s/\s\+$//e
 
-# colorscheme desert
