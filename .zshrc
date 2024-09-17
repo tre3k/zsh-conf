@@ -1,4 +1,7 @@
-source ~/.profile
+PROFILE=~/.profile
+if [[ -f "$PROFILE" ]]; then
+    source $PROFILE
+fi
 
 alias emacs='emacsclient -c'
 alias ls='ls --color=auto'
