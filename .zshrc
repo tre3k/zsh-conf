@@ -114,7 +114,6 @@ _r_postfix=""
 if [[ "$UID" == 0 ]]; then
     _color_bg=208
     _color_rfg=243
-    _r_postfix="!"
 fi
 
 setopt prompt_subst
