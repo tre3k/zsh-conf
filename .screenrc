@@ -1,9 +1,11 @@
 term screen-256color
 defbce on    # use current bg color for erased chars
 
+truecolors on
 hardstatus off
-hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H:%1` %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
-backtick 1 30 30 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
+backtick 0 5 5 "/bin/date" '+%Y-%m-%d'
+backtick 1 5 5 "/bin/date" '+%H:%M'
+hardstatus alwayslastline '%{#00ff00}[ %H ][%{#ffffff}%= %{7}%?%-Lw%?%{1;0}%{1}(%{15}%n%f%t%?(%u)%?%{1;0}%{1})%{7}%?%+Lw%?%? %=%{#00ff00}][ %{#00a5ff}%{6}%0` %{#ffffff}%{7}%1`%{#00ff00} ]'
 
 startup_message off
+
