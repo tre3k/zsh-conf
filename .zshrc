@@ -137,6 +137,10 @@ case "$TERM" in
 	setColorPrompt
 	;;
 
+    xterm-kitty)
+	setColorPrompt
+	;;
+
     *)
 	zstyle ':vcs_info:*' check-for-changes true
 	zstyle ':vcs_info:*' unstagedstr '!'
