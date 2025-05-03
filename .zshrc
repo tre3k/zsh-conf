@@ -126,6 +126,11 @@ function setColorPrompt () {
 	zstyle ':vcs_info:*' formats "%F{$_color_fg}%K{$_color_git_bg} %s%b%u%c%K{$_color_bg}%F{$_color_git_bg}%f%k"
 	PROMPT='${vcs_info_msg_0_}%F{$_color_fg}%K{$_color_bg} %~ %k%f%F{$_color_bg}%f '
 	RPROMPT='%F{$_color_rfg} %n${_r_postfix}@%m%f'
+
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+	    SESSION_TYPE=remote/ssh
+	    PROMPT='%K{183}%F{236} ssh %f%k'${PROMPT}
+	fi
 }
 
 case "$TERM" in
