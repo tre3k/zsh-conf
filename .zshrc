@@ -11,6 +11,9 @@ alias grep='grep --color=auto'
 alias su='su -s /usr/bin/zsh'
 alias diff='diff -u --color=auto'
 
+alias mm='udiskie-mount -a'
+alias um='udiskie-umount'
+
 if [[ -f "/usr/bin/lsd" ]]; then
     alias ls='lsd'
 fi
