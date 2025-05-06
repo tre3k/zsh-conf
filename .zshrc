@@ -4,6 +4,8 @@ if [[ -f "$PROFILE" ]]; then
 fi
 
 alias emacs='emacsclient -c'
+alias e='emacsclient -c -r -n'
+alias enw='emacsclient -c -nw'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias su='su -s /usr/bin/zsh'
