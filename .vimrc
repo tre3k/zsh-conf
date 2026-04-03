@@ -6,6 +6,8 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
+set colorcolumn=80
+colorscheme sorbet
 
 autocmd BufWritePre * :%s/\s\+$//e
 
